@@ -313,7 +313,7 @@ def fancy_sums_of_digits(n):
 # #What goes out:
 #  -- Let X denote the   sum   of the digits in (n ** 1000).
 #  -- Let Y denote the   sum   of the digits in (n ** 999).
-#  This function RETURN the sum of the digits in (X ** Y).
+#  This function RETURNs the sum of the digits in (X ** Y).
 # Side effects:   None.
 # #Examples:
 #  -- If n is 2, then:
