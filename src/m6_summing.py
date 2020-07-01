@@ -6,6 +6,7 @@ in its simplest classic forms:
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
          their colleagues and Joseph Tarrant.
 """  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
+from math import cos, sqrt
 
 
 def main():
@@ -48,15 +49,21 @@ def run_test_sum_cosines():
 
 def sum_cosines(n):
 
-    """
-    What comes in:  A non-negative integer n.
-    What goes out:  The sum of the cosines of the integers
-       0, 1, 2, 3, ... n, inclusive, for the given n.
-    Side effects:   None.
-    Example:
-      If n is 3, this function returns
-        cos(0) + cos(1) + cos(2) + cos(3)   which is about 0.13416.
-    """
+    total = 0
+    for k in range(n):
+        total = total + cos(k)
+
+    return total
+
+    # """
+    # What comes in:  A non-negative integer n.
+    # What goes out:  The sum of the cosines of the integers
+    #    0, 1, 2, 3, ... n, inclusive, for the given n.
+    # Side effects:   None.
+    # Example:
+    #   If n is 3, this function returns
+    #     cos(0) + cos(1) + cos(2) + cos(3)   which is about 0.13416.
+    # """
     # ------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
@@ -68,6 +75,22 @@ def sum_cosines(n):
 
 
 def run_test_sum_square_roots():
+
+    expected = 62.8889409398
+    answer = sum_square_roots(16)
+    print('Test 1 expected:', expected)
+    print('actual:', answer)
+
+    expected = 19.060167092
+    answer = sum_square_roots(7)
+    print('Test 2 expected:', expected)
+    print('actual:', answer)
+
+    expected = 27.3028077791
+    answer = sum_square_roots(9)
+    print('Test 3 expected:', expected)
+    print('actual:', answer)
+
     """ Tests the   sum_square_roots   function. """
     # ------------------------------------------------------------------
     # TODO: 4. Implement this function.
@@ -84,18 +107,25 @@ def run_test_sum_square_roots():
 
 
 def sum_square_roots(n):
-    """
-    What comes in:  A non-negative integer n.
-    What goes out:  The sum of the square roots of the integers
-       2, 4, 6, 8, ... 2n    inclusive, for the given n.
-           So if n is 7, the last term of the sum is
-           the square root of 14 (not 7).
-    Side effects:   None.
-    Example:
-      If n is 5, this function returns
-         sqrt(2) + sqrt(4) + sqrt(6) + sqrt(8) + sqrt(10),
-      which is about 11.854408.
-    """
+
+    total = 0
+    for k in range(n * 2):
+        total = total + sqrt(k)
+
+    return total
+
+    # """
+    # What comes in:  A non-negative integer n.
+    # What goes out:  The sum of the square roots of the integers
+    #    2, 4, 6, 8, ... 2n    inclusive, for the given n.
+    #        So if n is 7, the last term of the sum is
+    #        the square root of 14 (not 7).
+    # Side effects:   None.
+    # Example:
+    #   If n is 5, this function returns
+    #      sqrt(2) + sqrt(4) + sqrt(6) + sqrt(8) + sqrt(10),
+    #   which is about 11.854408.
+    # """
     # ------------------------------------------------------------------
     # TODO: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
